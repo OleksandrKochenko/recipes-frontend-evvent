@@ -1,0 +1,32 @@
+import { initialState } from './initial-state';
+
+export const handlePending = state => {
+  state.isLoading = true;
+};
+
+export const handleReject = (state, { payload }) => {
+  state.error = payload;
+  state.isLoading = false;
+};
+
+export const handleRegisterFulfilled = (state, { payload }) => {
+  state.message = payload.message;
+  state.error = null;
+  state.isLoading = false;
+};
+
+export const handleLoginFulfilled = (state, { payload }) => {
+  state.user = payload.user;
+  state.token = payload.token;
+  state.isLoggedIn = true;
+  state.error = null;
+  state.isLoading = false;
+};
+
+export const handleLogoutFulfilled = state => {
+  state.user = initialState.user;
+  state.token = null;
+  state.isLoggedIn = false;
+  state.error = null;
+  state.isLoading = false;
+};
