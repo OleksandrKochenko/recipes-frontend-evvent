@@ -4,12 +4,14 @@ import {
   fetchCategories,
   fetchFavorites,
   fetchMyRecipes,
+  fetchRecipeById,
   fetchRecipes,
   updateFavorite,
 } from './operations';
 import {
   handleCategoriesFulfilled,
   handleFavoriteUpdateFulfilled,
+  handleFetchRecipeById,
   handlePending,
   handleRecipesFulilled,
   handleReject,
@@ -35,7 +37,10 @@ const apiSlice = createSlice({
       .addCase(fetchFavorites.rejected, handleReject)
       .addCase(fetchMyRecipes.pending, handlePending)
       .addCase(fetchMyRecipes.fulfilled, handleRecipesFulilled)
-      .addCase(fetchMyRecipes.rejected, handleReject);
+      .addCase(fetchMyRecipes.rejected, handleReject)
+      .addCase(fetchRecipeById.pending, handlePending)
+      .addCase(fetchRecipeById.fulfilled, handleFetchRecipeById)
+      .addCase(fetchRecipeById.rejected, handleReject);
   },
 });
 

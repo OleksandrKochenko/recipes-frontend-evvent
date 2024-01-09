@@ -62,3 +62,15 @@ export const fetchMyRecipes = createAsyncThunk(
     }
   }
 );
+
+export const fetchRecipeById = createAsyncThunk(
+  'api/recipeById',
+  async (id, thunkAPI) => {
+    try {
+      const { data } = await axios.get(`/api/recipes/${id}`);
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

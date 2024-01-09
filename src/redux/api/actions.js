@@ -30,3 +30,9 @@ export const handleFavoriteUpdateFulfilled = (state, { payload }) => {
   state.error = null;
   state.isLoading = false;
 };
+
+export const handleFetchRecipeById = (state, { payload }) => {
+  state.currentRecipe = payload;
+  state.error = null;
+  state.isLoading = false;
+};

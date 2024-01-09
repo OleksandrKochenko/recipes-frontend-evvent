@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 export const NavBar = () => {
   return (
-    <ul className="w-full h-20 text-2xl flex justify-center items-center uppercase">
+    <ul className="w-full h-20 text-2xl text-blue-500 flex justify-center items-center uppercase">
       <li className="mx-6">
         <NavLink
           to={'/'}
