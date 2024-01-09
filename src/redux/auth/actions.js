@@ -10,7 +10,7 @@ export const handleReject = (state, { payload }) => {
 };
 
 export const handleRegisterFulfilled = (state, { payload }) => {
-  state.message = payload.message;
+  state.user.email = payload.email;
   state.error = null;
   state.isLoading = false;
 };

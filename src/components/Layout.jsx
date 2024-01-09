@@ -5,10 +5,10 @@ import { useSelector } from 'react-redux';
 
 export const Layout = () => {
   const isLoading = useSelector(state => state.auth.isLoading); // ---- !
-  console.log(isLoading);
+  console.log('isLoading', isLoading);
 
   return (
-    <main>
+    <main className="bg-gray-900 flex h-screen flex-col items-center justify-between pt-20 pb-2 ">
       <Suspense fallback={null}>
         <Outlet />
       </Suspense>
