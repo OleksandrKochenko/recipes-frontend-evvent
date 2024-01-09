@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/recipes-frontend-evvent/static/css/main.47879b33.css",
-    "main.js": "/recipes-frontend-evvent/static/js/main.62f1ef0e.js",
+    "main.css": "/recipes-frontend-evvent/static/css/main.cba55e10.css",
+    "main.js": "/recipes-frontend-evvent/static/js/main.31ac80e7.js",
     "index.html": "/recipes-frontend-evvent/index.html",
-    "main.47879b33.css.map": "/recipes-frontend-evvent/static/css/main.47879b33.css.map",
-    "main.62f1ef0e.js.map": "/recipes-frontend-evvent/static/js/main.62f1ef0e.js.map"
+    "main.cba55e10.css.map": "/recipes-frontend-evvent/static/css/main.cba55e10.css.map",
+    "main.31ac80e7.js.map": "/recipes-frontend-evvent/static/js/main.31ac80e7.js.map"
   },
   "entrypoints": [
-    "static/css/main.47879b33.css",
-    "static/js/main.62f1ef0e.js"
+    "static/css/main.cba55e10.css",
+    "static/js/main.31ac80e7.js"
   ]
 }
