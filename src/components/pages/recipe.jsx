@@ -9,7 +9,7 @@ export const RecipePage = () => {
 
   useEffect(() => {
     dispatch(fetchRecipeById(id));
-  }, []);
+  }, [dispatch, id]);
 
   const recipe = useSelector(store => store.api.currentRecipe);
 
