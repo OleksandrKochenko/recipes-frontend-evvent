@@ -26,3 +26,15 @@ export const fetchRecipes = createAsyncThunk(
     }
   }
 );
+
+export const updateFavorite = createAsyncThunk(
+  'api/favorite',
+  async (id, thunkAPI) => {
+    try {
+      const { data } = await axios.put(`/api/recipes/favorites/${id}`);
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

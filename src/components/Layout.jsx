@@ -9,13 +9,13 @@ export const Layout = () => {
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
 
   return (
-    <div className="h-screen ">
+    <div className="h-full ">
       {isLoggedIn && (
-        <header className="fixed top-0 left-0 w-screen bg-gray-900">
+        <header className="fixed top-0 left-0 w-full bg-gray-900">
           <NavBar />
         </header>
       )}
-      <main className="bg-gray-900 flex h-full flex-col items-center justify-between pt-20 pb-2 ">
+      <main className="bg-gray-900 flex h-full w-full flex-col items-center justify-between pt-20 ">
         <Suspense fallback={null}>
           <Outlet />
         </Suspense>

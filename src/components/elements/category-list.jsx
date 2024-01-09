@@ -13,14 +13,12 @@ export const CategoryList = ({ currentCategory, getCategoryName }) => {
     getCategoryName(e.target.textContent);
   };
 
-  console.log(currentCategory);
-
   useEffect(() => {
     dispatch(fetchCategories());
   }, [dispatch]);
 
   return (
-    <ul className="w-full flex justify-between px-2 cursor-pointer capitalize">
+    <ul className="w-full flex justify-between cursor-pointer capitalize">
       <li
         key={'all'}
         className={currentCategory === 'all' ? activeStile : ''}
