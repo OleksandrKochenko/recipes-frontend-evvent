@@ -38,3 +38,27 @@ export const updateFavorite = createAsyncThunk(
     }
   }
 );
+
+export const fetchFavorites = createAsyncThunk(
+  'api/allFavorites',
+  async (_, thunkAPI) => {
+    try {
+      const { data } = await axios.get('/api/recipes/favorites');
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const fetchMyRecipes = createAsyncThunk(
+  'api/myRecipes',
+  async (_, thunkAPI) => {
+    try {
+      const { data } = await axios.get('/api/recipes/my');
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

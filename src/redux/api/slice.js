@@ -1,6 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { initialState } from './initial-state';
-import { fetchCategories, fetchRecipes, updateFavorite } from './operations';
+import {
+  fetchCategories,
+  fetchFavorites,
+  fetchMyRecipes,
+  fetchRecipes,
+  updateFavorite,
+} from './operations';
 import {
   handleCategoriesFulfilled,
   handleFavoriteUpdateFulfilled,
@@ -23,7 +29,13 @@ const apiSlice = createSlice({
       .addCase(fetchRecipes.rejected, handleReject)
       .addCase(updateFavorite.pending, handlePending)
       .addCase(updateFavorite.fulfilled, handleFavoriteUpdateFulfilled)
-      .addCase(updateFavorite.rejected, handleReject);
+      .addCase(updateFavorite.rejected, handleReject)
+      .addCase(fetchFavorites.pending, handlePending)
+      .addCase(fetchFavorites.fulfilled, handleRecipesFulilled)
+      .addCase(fetchFavorites.rejected, handleReject)
+      .addCase(fetchMyRecipes.pending, handlePending)
+      .addCase(fetchMyRecipes.fulfilled, handleRecipesFulilled)
+      .addCase(fetchMyRecipes.rejected, handleReject);
   },
 });
 

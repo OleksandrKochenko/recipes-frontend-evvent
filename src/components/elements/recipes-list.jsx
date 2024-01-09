@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { updateFavorite } from '../../redux/api/operations';
 
-export const RecipesList = ({ currentCategory }) => {
+export const RecipesList = () => {
   const dispatch = useDispatch();
   const recipes = useSelector(state => state.api.recipes);
   const { id: userId } = useSelector(state => state.auth.user);

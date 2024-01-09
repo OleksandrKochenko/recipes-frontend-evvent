@@ -1,16 +1,12 @@
 import { CategoryList } from 'components/elements/category-list';
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { fetchRecipes } from '../../redux/api/operations';
 import { RecipesList } from 'components/elements/recipes-list';
 
 export const CategoryPage = () => {
   const [category, setCategory] = useState('all');
   const dispatch = useDispatch();
-
-  const isLoading = useSelector(state => state.api.isLoading);
-
-  console.log('isLoading', isLoading);
 
   useEffect(() => {
     dispatch(fetchRecipes({ category }));
@@ -19,7 +15,7 @@ export const CategoryPage = () => {
   return (
     <>
       <CategoryList currentCategory={category} getCategoryName={setCategory} />
-      <RecipesList currentCategory={category} />
+      <RecipesList />
     </>
   );
 };

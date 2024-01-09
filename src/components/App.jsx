@@ -14,6 +14,7 @@ import { SearchPage } from './pages/search';
 import { MyRecipesPage } from './pages/my-recipes';
 import { FavoritePage } from './pages/favorite';
 import { RestrictedRoute } from './RestrictedRoute';
+import { RecipePage } from './pages/recipe';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -33,15 +34,11 @@ export const App = () => {
         <Route index element={<Home />} />
         <Route
           path="/signin"
-          element={
-            <RestrictedRoute redirectTo="/category" component={<SignIn />} />
-          }
+          element={<RestrictedRoute component={<SignIn />} />}
         />
         <Route
           path="/signup"
-          element={
-            <RestrictedRoute redirectTo="/category" component={<SignUp />} />
-          }
+          element={<RestrictedRoute component={<SignUp />} />}
         />
         <Route
           path="/category"
@@ -59,6 +56,12 @@ export const App = () => {
           path="/my-recipes"
           element={
             <PrivateRoute redirectTo="/signin" component={<MyRecipesPage />} />
+          }
+        />
+        <Route
+          path="/recipe/:id"
+          element={
+            <PrivateRoute redirectTo="/signin" component={<RecipePage />} />
           }
         />
         <Route

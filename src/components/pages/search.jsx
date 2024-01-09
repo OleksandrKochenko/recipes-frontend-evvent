@@ -1,3 +1,3 @@
 export const SearchPage = () => {
-  return <div>Search Page</div>;
+  return <div>Search Page under construction</div>;
 };
