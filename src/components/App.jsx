@@ -25,7 +25,7 @@ export const App = () => {
   const isLoading = useSelector(state => state.auth.isLoading);
   const isRefreshing = useSelector(state => state.auth.isRefreshing);
 
-  return isRefreshing ? (
+  return isRefreshing || isLoading ? (
     <Loader />
   ) : (
     <Routes>
