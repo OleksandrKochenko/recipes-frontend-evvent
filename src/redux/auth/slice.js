@@ -7,6 +7,8 @@ import {
   handleRegisterFulfilled,
   handleReject,
   handlePending,
+  handlePendingRefresh,
+  handleRefreshFulfilled,
 } from './actions';
 
 const authSlice = createSlice({
@@ -23,8 +25,8 @@ const authSlice = createSlice({
       .addCase(logIn.pending, handlePending)
       .addCase(logIn.fulfilled, handleLoginFulfilled)
       .addCase(logIn.rejected, handleReject)
-      .addCase(refreshUser.pending, handlePending)
-      .addCase(refreshUser.fulfilled, handleLoginFulfilled)
+      .addCase(refreshUser.pending, handlePendingRefresh)
+      .addCase(refreshUser.fulfilled, handleRefreshFulfilled)
       .addCase(refreshUser.rejected, handleReject)
       .addCase(logOut.fulfilled, handleLogoutFulfilled);
   },

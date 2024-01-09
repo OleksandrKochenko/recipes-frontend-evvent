@@ -1,10 +1,11 @@
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import Notiflix from 'notiflix';
 import { FormField } from './form-field';
 import { Button } from './button';
 import { logIn, register } from '../../redux/auth/operations';
 
-export const Form = ({ title, type }) => {
+export const UserForm = ({ title, type }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -12,13 +13,22 @@ export const Form = ({ title, type }) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());
-    if (type === 'signin') {
-      dispatch(logIn(data));
-      navigate('/category');
-    } else {
-      dispatch(register(data));
-      navigate('/signin');
-    }
+    const submitData = async () => {
+      try {
+        if (type === 'signin') {
+          await dispatch(logIn(data));
+          Notiflix.Notify.success('User logged in');
+          navigate('/category');
+        } else {
+          await dispatch(register(data));
+          Notiflix.Notify.success('New user registered');
+          navigate('/signin');
+        }
+      } catch (error) {
+        Notiflix.Notify.error(error.message);
+      }
+    };
+    submitData();
   };
 
   return (
