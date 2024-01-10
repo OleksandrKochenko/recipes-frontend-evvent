@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://evvent-ta-recipes.onrender.com/';
+axios.defaults.baseURL = 'https://api-recipes-sigma.vercel.app/';
 
 const authHeader = {
   set(token) {
